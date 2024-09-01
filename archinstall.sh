@@ -6,7 +6,7 @@ read -p "root partition? " root_p
 mount $root_p /mnt
 mount --mkdir $boot_p /mnt/boot
 pacstrap -K /mnt base linux linux-firmware linux-headers iwd dhcpcd 
-genfstab -U >> /mnt/etc/fstab
+genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf
