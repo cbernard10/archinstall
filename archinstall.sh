@@ -5,7 +5,7 @@ read -p "boot partition? " boot_p
 read -p "root partition? " root_p
 mount $root_p /mnt
 mount --mkdir $boot_p /mnt/boot
-pacstrap -K /mnt base linux linux-firmware linux-headers iwd dhcpcd xorg-server xorg-xrandr picom dunst polybar xorg-xinit unzip plasma-meta npm python-pywal bspwm sxhkd sudo
+pacstrap -K /mnt base linux linux-firmware linux-headers iwd dhcpcd 
 genfstab -U >> /mnt/etc/fstab
 arch-chroot /mnt
 locale-gen
