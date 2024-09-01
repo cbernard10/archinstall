@@ -15,8 +15,8 @@ mkdir .config/alacritty
 
 git clone https://github.com/cbernard10/dotfiles
 
-cp dotfiles/bspwm/bspwmrc .config/bspwm/
-cp dotfiles/sxhkd/sxhkdrc .config/sxhkd/
-cp dotfiles/alacritty/alacritty.toml .config/alacritty/
+cp dotfiles/one/bspwm/bspwmrc .config/bspwm/
+cp dotfiles/one/sxhkd/sxhkdrc .config/sxhkd/
+cp dotfiles/one/alacritty/alacritty.toml .config/alacritty/
 
 sudo reboot now
