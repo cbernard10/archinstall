@@ -17,8 +17,8 @@ arch-chroot /mnt echo KEYMAP=fr > /mnt/etc/vconsole.conf
 arch-chroot /mnt echo "$hn" > /mnt/etc/hostname
 arch-chroot /mnt passwd
 arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=boot/ --bootloader-id=grub_uefi --recheck
-arch-chroot /mnt cp /mnt/usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /mnt/boot/grub/locale/en.mo
-arch-chroot /mnt grub-mkconfig -o /mnt/boot/grub/grub.cfg
+arch-chroot /mnt cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
+arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 arch-chroot /mnt useradd -m $un
 arch-chroot /mnt echo -e "\033[31;1;4mENTER PASSWORD FOR USER $un\033[0m"
 arch-chroot /mnt passwd $un
@@ -27,6 +27,5 @@ arch-chroot /mnt pacman -Syu
 arch-chroot /mnt systemctl enable dhcpcd.service
 arch-chroot /mnt systemctl enable iwd.service
 arch-chroot /mnt systemctl enable fstrim.timer
-arch-chroot /mnt exit 
 umount -R /mnt
 reboot
