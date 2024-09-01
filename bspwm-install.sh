@@ -7,7 +7,7 @@ cd ..
 
 sudo pacman -S alacritty bspwm btop neofetch neovim picom polybar ranger sxhkd dunst xorg-server xorg-xinit xorg-xrandr ttf-hack-nerd python-pywal tmux nvidia
 
-echo "sxhkd &; exec bspwm" > .xinitrc
+printf "sxhkd &\nexec bspwm" > .xinitrc
 
 mkdir .config/bspwm
 mkdir .config/sxhkd
