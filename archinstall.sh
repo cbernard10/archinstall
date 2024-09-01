@@ -22,9 +22,9 @@ arch-chroot /mnt echo "ENTER PASSWORD FOR USER $un"
 arch-chroot /mnt passwd $un
 arch-chroot /mnt pacman -Syu
 arch-chroot /mnt pacman -S plasma-meta bspwm sxhkd xorg-server xorg-xinit xorg-xrandr picom dunst polybar 
-arch-chroot /mnt echo "export DESKTOP_SESSION=plasma; exec startplasma-x11" > "/home/$un/.xinitrc"
-arch-chroot /mnt systemctl enable --now dhcpcd.service
-arch-chroot /mnt systemctl enable --now iwd.service
+arch-chroot /mnt echo "export DESKTOP_SESSION=plasma; exec startplasma-x11" > "/mnt/home/$un/.xinitrc"
+arch-chroot /mnt systemctl enable dhcpcd.service
+arch-chroot /mnt systemctl enable iwd.service
 #arch-chroot /mnt exit 
 #umount -R /mnt
 #reboot
