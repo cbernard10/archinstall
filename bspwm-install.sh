@@ -9,14 +9,15 @@ sudo pacman -S alacritty bspwm btop neofetch neovim picom polybar ranger sxhkd d
 
 printf "sxhkd &\nexec bspwm" > .xinitrc
 
-mkdir .config/bspwm
-mkdir .config/sxhkd
-mkdir .config/alacritty
-
 git clone https://github.com/cbernard10/dotfiles
 
-cp dotfiles/one/bspwm/bspwmrc .config/bspwm/
-cp dotfiles/one/sxhkd/sxhkdrc .config/sxhkd/
-cp dotfiles/one/alacritty/alacritty.toml .config/alacritty/
+cp -r dotfiles/one/bspwm/ .config/
+cp -r dotfiles/one/sxhkd/ .config/
+cp -r dotfiles/one/alacritty/ .config
+cp -r dotfiles/one/picom/ .config/
+cp -r dotfiles/one/nvim/ .config/
+cp -r dotfiles/one/polybar .config/
+cp -r dotfiles/one/btop .config/
+cp -r dotfiles/one/betterlockscreen .config/
 
 sudo reboot now
