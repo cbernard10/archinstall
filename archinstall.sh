@@ -16,7 +16,6 @@ arch-chroot /mnt passwd
 arch-chroot /mnt grub-install --target=x86-64-efi --efi-directory=boot/ --bootloader-id=grub_uefi --recheck
 arch-chroot /mnt cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.gfc
-arch-chroot /mnt exit
-arch-chroot 
-umount -R /mnt
-reboot
+#arch-chroot /mnt exit 
+#umount -R /mnt
+#reboot
