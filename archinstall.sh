@@ -20,6 +20,7 @@ arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 arch-chroot /mnt useradd -m $un
 arch-chroot /mnt echo "ENTER PASSWORD FOR USER $un"
 arch-chroot /mnt passwd $un
+arch-chroot /mnt echo "ALL ALL=(ALL:ALL) ALL" >> /etc/sudo.conf
 arch-chroot /mnt pacman -Syu
 arch-chroot /mnt pacman -S plasma-meta bspwm sxhkd xorg-server xorg-xinit xorg-xrandr picom dunst polybar 
 arch-chroot /mnt echo "export DESKTOP_SESSION=plasma; exec startplasma-x11" > "/mnt/home/$un/.xinitrc"
