@@ -5,6 +5,8 @@ read -p "boot partition? " boot_p
 read -p "root partition? " root_p
 read -p "hostname? " hn
 read -p "username? " un
+mkfs.ext4 $root_p
+mkfs.fat -F 32 $boot_p
 mount $root_p /mnt
 mount --mkdir $boot_p /mnt/boot
 pacstrap -K /mnt base linux linux-firmware linux-headers sudo iwd dhcpcd efibootmgr grub intel-ucode
@@ -18,7 +20,7 @@ arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=boot/ --bootlo
 arch-chroot /mnt cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 arch-chroot /mnt useradd -m $un
-arch-chroot /mnt echo "ENTER PASSWORD FOR USER $un"
+arch-chroot /mnt echo -e "\033[31;1;4mENTER PASSWORD FOR USER $un\033[0m"
 arch-chroot /mnt passwd $un
 arch-chroot /mnt echo "ALL ALL=(ALL:ALL) ALL" >> /etc/sudoers
 arch-chroot /mnt pacman -Syu
