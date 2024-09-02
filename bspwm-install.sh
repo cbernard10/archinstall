@@ -7,6 +7,8 @@ cd ..
 
 sudo pacman -S alacritty bspwm btop neofetch neovim picom polybar ranger sxhkd dunst xorg-server xorg-xinit xorg-xrandr ttf-hack-nerd python-pywal tmux nvidia dmenu
 
+yay -S betterlockscreen
+
 printf "sxhkd &\nexec bspwm" > .xinitrc
 
 git clone https://github.com/cbernard10/dotfiles
