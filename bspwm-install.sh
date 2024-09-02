@@ -5,7 +5,7 @@ cd yay
 makepkg -si
 cd ..
 
-sudo pacman -S alacritty bspwm btop neofetch neovim picom polybar ranger sxhkd dunst xorg-server xorg-xinit xorg-xrandr ttf-hack-nerd python-pywal tmux nvidia
+sudo pacman -S alacritty bspwm btop neofetch neovim picom polybar ranger sxhkd dunst xorg-server xorg-xinit xorg-xrandr ttf-hack-nerd python-pywal tmux nvidia dmenu
 
 printf "sxhkd &\nexec bspwm" > .xinitrc
 
