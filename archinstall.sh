@@ -28,6 +28,7 @@ arch-chroot /mnt pacman -Syu
 arch-chroot /mnt systemctl enable dhcpcd.service
 arch-chroot /mnt systemctl enable iwd.service
 arch-chroot /mnt systemctl enable fstrim.timer
-arch-chroot cp archinstall/bspwm-install.sh "/mnt/home/$un/"
+arch-chroot /mnt/home/$un/ git clone https://github.com/cbernard10/archinstall
+arch-chroot /mnt/home/$un/ cp archinstall/bspwm-install.sh .
 umount -R /mnt
 reboot
