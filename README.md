@@ -1,3 +1,5 @@
+## automatic archlinux installation (system: UEFI / Intel / 64bit / Nvidia GPU )
+
 - create `boot` and `root` partitions with `cfdisk` (~1G for `boot`, rest for `root`)
 - get internet access with `iwctl` (or ethernet)
 - `pacman -Sy`
