@@ -15,6 +15,7 @@ arch-chroot /mnt locale-gen
 arch-chroot /mnt echo LANG=en_US.UTF-8 > /mnt/etc/locale.conf
 arch-chroot /mnt echo KEYMAP=fr > /mnt/etc/vconsole.conf
 arch-chroot /mnt echo "$hn" > /mnt/etc/hostname
+arch-chroot /mnt echo -e "\033[31;1;4mENTER PASSWORD FOR ROOT\033[0m"
 arch-chroot /mnt passwd
 arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=boot/ --bootloader-id=grub_uefi --recheck
 arch-chroot /mnt cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
