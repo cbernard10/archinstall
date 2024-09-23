@@ -9,7 +9,7 @@ mkfs.ext4 $root_p
 mkfs.fat -F 32 $boot_p
 mount $root_p /mnt
 mount --mkdir $boot_p /mnt/boot
-pacstrap -K /mnt base linux linux-firmware linux-headers sudo iwd dhcpcd efibootmgr grub intel-ucode vim git
+pacstrap -K /mnt base linux linux-firmware linux-headers sudo iwd dhcpcd efibootmgr grub intel-ucode vim git base-devel
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt locale-gen
 arch-chroot /mnt echo LANG=en_US.UTF-8 > /mnt/etc/locale.conf
